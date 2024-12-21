@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 static u32	*get_seed(void)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 u16	*get_px_adr(t_virtual* vmem, u16 *vbuf, u16 x, u16 y)
 {

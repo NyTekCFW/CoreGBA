@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*   ~Header by : NyTekCFW~                                   SVSC Dev Team   */
 /*                                                                            */
-/*   mx_virtual.c                                                             */
+/*   corectx_virtual.c                                                        */
 /*                                                                            */
 /*   By: NyTekCFW - Youtube.com/NyTekCFW                                      */
 /*                                                                            */
-/*   Created: 09/12/2024 11:24:27 by NyTekCFW                                 */
-/*   Updated: 09/12/2024 12:00:38 by NyTekCFW                                 */
+/*   Created: 21/12/2024 17:06:44 by NyTekCFW                                 */
+/*   Updated: 21/12/2024 17:59:23 by NyTekCFW                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 t_virtual	*get_virtual(void)
 {
-	return (&gmx()->vmem);
+	return (&get_coregba()->vmem);
 }
 
 static void	set_virtual_scale(void)
@@ -27,7 +27,7 @@ static void	set_virtual_scale(void)
 	*(volatile u16 *)0x4000026 = v;//REG_BG2PD
 }
 
-void	set_virtual_mode(int mode, int use_mode_5_scale)
+static void	set_virtual_mode(int mode, int use_mode_5_scale)
 {
 	t_virtual	*vmem = get_virtual();
 
@@ -67,25 +67,20 @@ void	set_virtual_mode(int mode, int use_mode_5_scale)
 	}
 }
 
-void	set_virtual_timer(int status)
+static void	set_virtual_timer(void)
 {
 	t_virtual	*vmem = get_virtual();
 
-	if (!vmem->timer_on && status)
+	if (!vmem->timer_on)
 	{
 		clock_init();
 		vmem->timer_on = 1;
 	}
 }
 
-int	boot_virtual_loader(int mode)
+void	boot_virtual(u8 scaled)
 {
-	if (mode == MODE_5_BG2)
-	{
-		set_virtual_mode(mode, 1);
-		set_virtual_timer(1);
-		return (1);
-	}
-	return (0);
+	set_virtual_mode(MODE_5_BG2, scaled);
+	set_virtual_timer();
 }
 

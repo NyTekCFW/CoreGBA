@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 #define	TIME_LIMIT 0xFF000000
 
@@ -61,16 +61,5 @@ void	sleep(float sec)
 		return ;
 	sec = (u32)(CLOCKS_PER_SEC * sec);
 	while ((clock() - f) < sec)
-		;
-}
-
-void	usleep(u32 ms)
-{
-	u32	f = clock();
-
-	if (ms > 10000 || !ms)
-		return ;
-	ms = (CLOCKS_PER_SEC / ms);
-	while ((clock() - f) < ms)
 		;
 }

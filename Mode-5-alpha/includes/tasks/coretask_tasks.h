@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*   ~Header by : NyTekCFW~                                   SVSC Dev Team   */
 /*                                                                            */
-/*   mxgba.c                                                                  */
+/*   coretask_tasks.h                                                         */
 /*                                                                            */
 /*   By: NyTekCFW - Youtube.com/NyTekCFW                                      */
 /*                                                                            */
-/*   Created: 10/12/2024 14:54:20 by NyTekCFW                                 */
-/*   Updated: 10/12/2024 14:54:23 by NyTekCFW                                 */
+/*   Created: 21/12/2024 19:35:05 by NyTekCFW                                 */
+/*   Updated: 21/12/2024 19:35:06 by NyTekCFW                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mx_global.h"
+#ifndef CORETASK_TASKS_H
+# define CORETASK_TASKS_H
 
-/// @brief Global library stored in iwram for fast data access
-/// @return ptr of the static
-t_mx	*gmx(void)
-{
-	static t_mx	mx = {0};
+void	run_task_irq(void);
+void	run_task_script(void);
+void	run_tasks(u8 scaled, u16 clear_color, u32 rand_seed);
 
-	return (&mx);
-}
+#endif

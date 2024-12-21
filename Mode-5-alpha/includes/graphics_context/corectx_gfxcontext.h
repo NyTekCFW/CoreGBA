@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*   ~Header by : NyTekCFW~                                   SVSC Dev Team   */
 /*                                                                            */
-/*   mx_gcm.h                                                                 */
+/*   corectx_gfxcontext.h                                                     */
 /*                                                                            */
 /*   By: NyTekCFW - Youtube.com/NyTekCFW                                      */
 /*                                                                            */
-/*   Created: 10/12/2024 14:31:40 by NyTekCFW                                 */
-/*   Updated: 10/12/2024 14:31:42 by NyTekCFW                                 */
+/*   Created: 21/12/2024 18:05:44 by NyTekCFW                                 */
+/*   Updated: 21/12/2024 18:08:05 by NyTekCFW                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MX_GCM_H
-# define MX_GCM_H
+#ifndef CORECTX_GFXCONTEXT_H
+# define CORECTX_GFXCONTEXT_H
 
-enum e_mx_gcm
+enum e_core_gcm
 {
 	GCM_FRONT	= 0,
 	GCM_BACK,
@@ -21,7 +21,14 @@ enum e_mx_gcm
 	GCM_MAX
 };
 
-typedef struct mx_gcm_s
+enum e_mode
+{
+	MODE_3_BG2	= 0x403, //1027
+	MODE_4_BG2, //1028
+	MODE_5_BG2 //1029
+};
+
+typedef struct core_gcm_s
 {
 	u8		current_buffer;
 	vu16	*flip_status;
@@ -31,16 +38,18 @@ typedef struct mx_gcm_s
 }	t_gcm;
 
 
-u8			gcm_get_active_id(void);
-u16			*gcm_get_active_buffer(void);
-u16			*gcm_get_draw_buffer(void);
-u16			*gcm_get_front_buffer(void);
-u16			*gcm_get_back_buffer(void);
-u16			gcm_get_buffer_size(void);
-void		gcm_init_body(void);
-void		gcm_prepare_flip(void);
-void		gcm_set_clear_color(u16 clr);
-void		gcm_clear_active_buffer(void);
-void		gcm_clear_draw_buffer(void);
-t_gcm		*get_gcm(void);
+typedef struct mx_virtual_s
+{
+	u16	width;
+	u16	height;
+	u16	scaled_width;
+	u16	scaled_height;
+	u16	mode;
+	u8	use_scaling;
+	u8	timer_on;
+}	t_virtual;
+
+# include "corectx_gcm.h"
+# include "corectx_virtual.h"
+
 #endif

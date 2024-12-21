@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 /// @brief return a unsigned int value
 ///that correspond at the hash of a string,

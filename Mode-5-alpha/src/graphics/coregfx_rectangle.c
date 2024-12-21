@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 IN_IWRAM void	draw_rectangle(s16 x, s16 y, s16 w, s16 h, u16 clr, u8 fill)
 {

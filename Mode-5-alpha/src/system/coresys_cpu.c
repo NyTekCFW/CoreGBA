@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 #pragma region CPU_FILL
 void	CpuFill32(vu32 v, void *dst, u32 size)

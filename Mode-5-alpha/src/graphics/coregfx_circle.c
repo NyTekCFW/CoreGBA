@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 static void	draw_circle_line(u16 *vbuf, int y, int x1, int x2, int h, int w, int wo, u16 color)
 {

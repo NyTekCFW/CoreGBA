@@ -1,6 +1,6 @@
 coregfx_color.o: \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/coregfx_color.c \
- /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_global.h \
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/coregba.h \
  /opt/devkitpro/libgba/include/gba_types.h \
  /opt/devkitpro/libgba/include/gba_video.h \
  /opt/devkitpro/libgba/include/gba_base.h \
@@ -21,8 +21,9 @@ coregfx_color.o: \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_keys.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_code.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_num.h \
- /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_gcm.h \
- /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_virtual.h \
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_gfxcontext.h \
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_gcm.h \
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_virtual.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_graphics.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_glyphs.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_img.h \
@@ -30,8 +31,9 @@ coregfx_color.o: \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_color.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_text.h \
  /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_shapes.h \
- /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_colorpicker.h
-/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_global.h:
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_colorpicker.h \
+ /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./tasks/coretask_tasks.h
+/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/coregba.h:
 /opt/devkitpro/libgba/include/gba_types.h:
 /opt/devkitpro/libgba/include/gba_video.h:
 /opt/devkitpro/libgba/include/gba_base.h:
@@ -52,8 +54,9 @@ coregfx_color.o: \
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_keys.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_code.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./keys/corekey_num.h:
-/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_gcm.h:
-/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/mx_virtual.h:
+/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_gfxcontext.h:
+/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_gcm.h:
+/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics_context/corectx_virtual.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_graphics.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_glyphs.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_img.h:
@@ -62,3 +65,4 @@ coregfx_color.o: \
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_text.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_shapes.h:
 /home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./graphics/coregfx_colorpicker.h:
+/home/lchiva/Bureau/CoreGBA/Mode-5-alpha/src/graphics/../../includes/./tasks/coretask_tasks.h:

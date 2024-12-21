@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 s8	get_key_num(u16 code)
 {
@@ -18,7 +18,7 @@ s8	get_key_num(u16 code)
 
 	while (++i < BUTTON_MAX)
 	{
-		if (gmx()->key[i].code == code)
+		if (get_coregba()->key[i].code == code)
 			return (i);
 	}
 	return (-1);
@@ -49,6 +49,6 @@ u16	key_pressed(u16 key)
 t_key	*get_key(u8 id)
 {
 	if (id < BUTTON_MAX)
-		return (&gmx()->key[id]);
+		return (&get_coregba()->key[id]);
 	return (NULL);
 }

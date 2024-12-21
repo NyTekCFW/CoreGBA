@@ -16,7 +16,6 @@
 # define CLOCKS_PER_SEC	0x10000
 
 void	clock_init(void);
-void	usleep(u32 ms);
 void	sleep(float sec);
 u32		clock(void);
 u8		clock_waittime(u32 wait);

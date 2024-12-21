@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 void	set_keycode_status(u16 code, u8 active)
 {
@@ -53,6 +53,6 @@ void	init_keyboard(void)
 {
 	s8		i = -1;
 	while (++i < BUTTON_MAX)
-		gmx()->key[i] = (t_key){0};
+		get_coregba()->key[i] = (t_key){0};
 }
 

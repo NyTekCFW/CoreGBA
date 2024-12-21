@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*   ~Header by : NyTekCFW~                                   SVSC Dev Team   */
 /*                                                                            */
-/*   mx_global.h                                                              */
+/*   coregba.h                                                                */
 /*                                                                            */
 /*   By: NyTekCFW - Youtube.com/NyTekCFW                                      */
 /*                                                                            */
-/*   Created: 09/12/2024 07:52:34 by NyTekCFW                                 */
-/*   Updated: 09/12/2024 10:16:31 by NyTekCFW                                 */
+/*   Created: 21/12/2024 17:06:44 by NyTekCFW                                 */
+/*   Updated: 21/12/2024 18:28:18 by NyTekCFW                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ typedef unsigned int size_t;
 # include "./system/coresys_system.h"
 # include "./utils/coreutil_utils.h"
 # include "./keys/corekey_keys.h"
-# include "mx_gcm.h"
-# include "mx_virtual.h"
-//bonus data
+# include "./graphics_context/corectx_gfxcontext.h"
 # include "./graphics/coregfx_graphics.h"
+# include "./tasks/coretask_tasks.h"
 
 enum e_action
 {
@@ -43,20 +42,33 @@ enum e_action
 	ACT_FREE
 };
 
+typedef struct basic_s
+{
+	u8		initialised;
+	u8		running;
+	u8		max_fps;
+	u32		fps_out;
+	float	timescale;
+}	t_basic;
+
 typedef struct callbacks_s
 {
-	void	(*pre_rendering)();
-	void	(*post_rendering)();
+	void	(*scripts)(void);//function executed before rendering to update each data/value
+	void	(*rendering)(void);//function that will draw the game
+	void	(*keys)(void);//function called at start to init each key function
+	void	(*irq)(void);//function called at each irq vblank
 }	t_callback;
 
-typedef struct mx_s
+typedef struct core_s
 {
 	t_virtual	vmem;
 	t_gcm		gcm;
 	t_callback	callback;
 	t_key		key[BUTTON_MAX];
-}	t_mx;
+	t_basic		basic;
+}	t_coregba;
 
-t_mx	*gmx(void);
-
+t_coregba	*get_coregba(void);
+t_callback	*get_callback(void);
+t_basic		*get_basic(void);
 #endif

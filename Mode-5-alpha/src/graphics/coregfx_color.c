@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 inline u16	rgb_to_15bit(u8 r, u8 g, u8 b)
 {

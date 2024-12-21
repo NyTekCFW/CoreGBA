@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*   ~Header by : NyTekCFW~                                   SVSC Dev Team   */
 /*                                                                            */
-/*   mx_gcm.c                                                                 */
+/*   corectx_gcm.c                                                            */
 /*                                                                            */
 /*   By: NyTekCFW - Youtube.com/NyTekCFW                                      */
 /*                                                                            */
-/*   Created: 09/12/2024 12:36:34 by NyTekCFW                                 */
-/*   Updated: 09/12/2024 12:36:36 by NyTekCFW                                 */
+/*   Created: 21/12/2024 17:06:44 by NyTekCFW                                 */
+/*   Updated: 21/12/2024 17:59:20 by NyTekCFW                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mx_global.h"
+#include "../../includes/coregba.h"
 
 t_gcm	*get_gcm(void)
 {
-	return (&gmx()->gcm);
+	return (&get_coregba()->gcm);
 }
 
 void	gcm_setflip(void)
