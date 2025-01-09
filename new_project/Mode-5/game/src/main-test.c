@@ -55,6 +55,7 @@ void	task_rendering(void)
 {
 	t_engine	*engine = get_engine();
 
+	gcm_clear_draw_buffer();
 	char *t = xitoa(engine->fps_out);
 	draw_text(t, 0, 0, 0xffff);
 	xfree((void **)&t);

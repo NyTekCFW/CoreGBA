@@ -28,6 +28,8 @@
 # define CPU_SET_16BIT			0x00000000
 # define CPU_SET_32BIT			0x04000000
 
+# define REG_WAITCNT (*(vu16*)0x04000204)
+
 # include "coresys_cpu.h"
 # include "coresys_dma.h"
 # include "coresys_malloc.h"

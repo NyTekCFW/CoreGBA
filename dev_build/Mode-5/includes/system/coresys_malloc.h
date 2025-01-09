@@ -27,4 +27,6 @@ u16		mmap_get_total_sector(void);
 u16		mmap_get_used_sector(void);
 u16		mmap_get_free_sector(void);
 u32		mmap_get_reserved_size(void);
+u32		mmap_get_start_mem(void);
+u32		mmap_get_end_mem(void);
 #endif

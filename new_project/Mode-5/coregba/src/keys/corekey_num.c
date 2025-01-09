@@ -24,6 +24,17 @@ s8	get_key_num(u16 code)
 	return (-1);
 }
 
+void	keynum_release(u8 id)
+{
+	t_key	*key = get_key(id);
+
+	if (key)
+	{
+		key->ignore = true;
+		key->is_pressed = false;
+	}
+}
+
 void	keynum_replace(u8 id, void (*(func))(void))
 {
 	t_key	*key = get_key(id);
@@ -32,16 +43,30 @@ void	keynum_replace(u8 id, void (*(func))(void))
 		key->callback = func;
 }
 
-u8	keynum_execute(u8 id)
+void	unbind_allkeys(void)
+{
+	s8		i = -1;
+
+	while (++i < BUTTON_MAX)
+		get_core()->key[i].callback = NULL;
+}
+
+void	unbind_keynum(u8 i)
+{
+	if (i < BUTTON_MAX)
+		get_core()->key[i].callback = NULL;
+}
+
+bool	keynum_execute(u8 id)
 {
 	t_key	*key = get_key(id);
 
 	if (key	&& !key->ignore && key->is_pressed && key->callback)
-		return (key->callback(), 1);
-	return (0);
+		return (key->callback(), true);
+	return (false);
 }
 
-u16	key_pressed(u16 key)
+bool	key_pressed(u16 key)
 {
 	return (!((*(vu16 *)0x4000130) & key));
 }

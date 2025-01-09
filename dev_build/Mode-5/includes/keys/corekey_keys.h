@@ -31,9 +31,9 @@ enum e_button
 typedef struct key_hook_s
 {
 	u16		code;
-	u8		ignore;
 	u8		id;
-	u8		is_pressed;
+	bool	ignore;
+	bool	is_pressed;
 	void	(*(callback))(void);
 }	t_key;
 

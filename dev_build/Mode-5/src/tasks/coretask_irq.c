@@ -45,6 +45,7 @@ static void	irq_color_loop(void)
 	s8	vb = 0;
 
 	_color_loop(&row, &vb);
+	
 	replace_color(208, tab[row][vb]);
 }
 

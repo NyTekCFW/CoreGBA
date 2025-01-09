@@ -18,14 +18,14 @@
 //consoleDemoInit();
 #endif
 
-typedef unsigned int size_t;
-#define ALIGNED(n) __attribute__((aligned(n)))
-//# include <stdio.h>
-//# include <stdlib.h>
+# define COREGBA_VERSION	101
+# define ALIGNED(n) __attribute__((aligned(n)))
+
 # include </opt/devkitpro/libgba/include/gba_types.h>
 # include </opt/devkitpro/libgba/include/gba_video.h>
 # include </opt/devkitpro/libgba/include/gba_interrupt.h>
 # include </opt/devkitpro/libgba/include/gba_systemcalls.h>
+# include </opt/devkitpro/libgba/include/gba_dma.h>
 # include </opt/devkitpro/libgba/include/gba_input.h>
 
 # include "./system/coresys_system.h"
@@ -34,6 +34,7 @@ typedef unsigned int size_t;
 # include "./graphics_context/corectx_gfxcontext.h"
 # include "./graphics/coregfx_graphics.h"
 # include "./tasks/coretask_tasks.h"
+# include "./savedata/coresave_savedata.h"
 
 enum e_action
 {
@@ -49,9 +50,13 @@ typedef struct core_s
 	t_callback	callback;
 	t_key		key[BUTTON_MAX];
 	t_engine	engine;
+	t_texture	texture;
+	t_cp		color_picker;
 }	t_core;
 
 t_core		*get_core(void);
 t_callback	*get_callback(void);
 t_engine	*get_engine(void);
+t_texture	*get_texture(void);
+t_cp		*get_color_picker(void);
 #endif

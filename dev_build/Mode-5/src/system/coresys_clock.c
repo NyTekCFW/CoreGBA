@@ -33,7 +33,7 @@ u32	clock(void)
 	return (TM4CNT);
 }
 
-u8	clock_waittime(u32 wait)
+bool	clock_waittime(u32 wait)
 {
 	if (wait >= TIME_LIMIT) //overflow fix
 	{

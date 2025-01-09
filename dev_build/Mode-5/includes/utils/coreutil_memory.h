@@ -13,9 +13,9 @@
 #ifndef COREUTIL_MEMORY_H
 # define COREUTIL_MEMORY_H
 
-void	*xmemcpy(void *dest, const void *src, size_t n);
-void	*xmemset(void *s, u16 c, size_t n);
+void	*xmemcpy(void *dest, const void *src, u32 n);
+void	*xmemset(void *s, u16 c, u32 n);
 void	xfree(void **data);
-int		xalloc(void **var, size_t nmemb, size_t ts);
+bool	xalloc(void **var, u32 nmemb, u32 ts);
 
 #endif

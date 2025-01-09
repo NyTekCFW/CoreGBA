@@ -31,8 +31,19 @@ void	CpuFastFill(vu32 v, void* dst, u32 size)
 void	CpuFill(void *dst, vu32 v, u32 size)
 {
 	uintptr_t	ptr = (uintptr_t)dst;
+	u32			i = 0;
+
 	if (!size)
 		return ;
+	if ((ptr % 2))
+	{
+		while (i < size)
+		{
+			*(vu8*)(ptr + i) = (u8)v;
+			++i;
+		}
+		return ;
+	}
 	if (ptr % 4 && !(ptr % 2))
 	{
 		CpuFill16(v, dst, size);
@@ -79,9 +90,19 @@ void	CpuCopy(const void *src, void *dest, u32 size)
 {
 	uintptr_t	ptr_s = (uintptr_t)src;
 	uintptr_t	ptr_d = (uintptr_t)dest;
+	u32			i = 0;
 
 	if (!size)
 		return ;
+	if ((ptr_d % 2) || (ptr_s % 2))
+	{
+		while (i < size)
+		{
+			*(vu8*)(ptr_d + i) = *(vu8*)(ptr_s + i);
+			++i;
+		}
+		return ;
+	}
 	if ((size % 2))
 	{
 		if (size > 1)

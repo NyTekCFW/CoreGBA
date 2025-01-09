@@ -26,6 +26,7 @@ char		**xsplit(char const *s, char c, int *size);
 s32			xatoi(const char *str);
 u32			xstrlen(const char *str);
 u32			fnv1a_hash(const char *str);
+u16			fnv1a_hash_lite(const char *str);
 u8			xstrcmp(const char *s1, const char *s2);
 
 #endif

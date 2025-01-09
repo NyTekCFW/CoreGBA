@@ -21,7 +21,6 @@ void	run_task_rendering(t_engine *engine, t_callback *callback)
 		;
 	left = clock() + (CLOCKS_PER_SEC / (30 * engine->timescale));
 	cpu = clock();
-	gcm_clear_draw_buffer();
 	if (callback->rendering)
 		callback->rendering();
 	while (clock() < cpu + (CLOCKS_PER_SEC / engine->max_fps))

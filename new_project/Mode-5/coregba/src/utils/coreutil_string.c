@@ -25,12 +25,27 @@ u32	fnv1a_hash(const char *str)
 	hash = 2166136261u;
 	while (*str)
 	{
-		hash ^= (unsigned char)*str;
+		hash ^= (u8)*str;
 		hash *= 16777619u;
 		++str;
 	}
 	return (hash);
 }
+
+u16	fnv1a_hash_lite(const char *str)
+{
+	u16 hash;
+
+	hash = 0x811u;
+	while (*str)
+	{
+		hash ^= (u8)*str;
+		hash *= 0x1003u;
+		++str;
+	}
+	return (hash);
+}
+
 
 /// @brief compare 2 string
 /// @param s1 string 1
@@ -40,7 +55,7 @@ u8	xstrcmp(const char *s1, const char *s2)
 {
 	while (*s1 && *s2 && *s1++ == *s2++)
 		;
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return ((u8)*s1 - (u8)*s2);
 }
 
 /// @brief get len of a string
@@ -52,7 +67,7 @@ u32	xstrlen(const char *str)
 
 	i = 0;
 	while (str[i])
-		i++;
+		++i;
 	return (i);
 }
 
@@ -62,10 +77,10 @@ u32	xstrlen(const char *str)
 /// @return 
 char	*xstrcpy(char *buffer, const char *src)
 {
-	u32	i;
+	u32	i = 0;
 
 	i = xstrlen(src);
-	CpuCopy(src, buffer, i + 1);
+	CpuCopy(src, buffer, i);
 	buffer[i] = '\0';
 	return (buffer);
 }

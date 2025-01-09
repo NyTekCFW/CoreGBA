@@ -14,7 +14,7 @@
 
 #ifndef MAX_SECTOR
 //Total sector available
-# define MAX_SECTOR				256//4 ko of sector
+# define MAX_SECTOR				512//8 ko of sector
 #endif
 
 #ifndef MEMORY_HEAP_SIZE
@@ -36,7 +36,7 @@ typedef struct sector_s
 	u16		size;
 	u8		is_free;
 	void	*ptr;
-}ALIGNED(4)	t_sector;
+}ALIGNED(4)	t_sector;//size = 16
 
 //Aligned to 4 for memory optimization
 ALIGNED(4) IN_EWRAM char		_mem_heap[MEMORY_HEAP_SIZE];	//Heap region
@@ -249,6 +249,16 @@ static void	mmap_init(void)
 static t_mmap	*get_mmap(void)
 {
 	return (&_mmap);
+}
+
+u32	mmap_get_start_mem(void)
+{
+	return (get_mmap()->start_address);
+}
+
+u32	mmap_get_end_mem(void)
+{
+	return (get_mmap()->end_address);
 }
 
 u32	mmap_get_total_mem(void)

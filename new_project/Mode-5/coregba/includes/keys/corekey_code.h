@@ -13,9 +13,9 @@
 #ifndef COREKEY_CODE_H
 # define COREKEY_CODE_H
 
-void	set_keycode_status(u16 code, u8 active);
+void	set_keycode_status(u16 code, bool active);
 void	add_keycode(u8 id, u16 code, void (*(func))(void));
 void	init_keyboard(void);
-u8		keycode_pressed(u16 code);
+bool	keycode_pressed(u16 code);
 
 #endif

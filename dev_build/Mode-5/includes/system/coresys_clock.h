@@ -17,8 +17,8 @@
 
 void	clock_init(void);
 void	sleep(float sec);
+bool	clock_waittime(u32 wait);
 u32		clock(void);
-u8		clock_waittime(u32 wait);
 u32		get_fps(u32 cpu);
 
 #endif

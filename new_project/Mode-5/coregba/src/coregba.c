@@ -30,3 +30,13 @@ t_engine	*get_engine(void)
 {
 	return (&get_core()->engine);
 }
+
+t_texture	*get_texture(void)
+{
+	return (&get_core()->texture);
+}
+
+t_cp	*get_color_picker(void)
+{
+	return (&get_core()->color_picker);
+}

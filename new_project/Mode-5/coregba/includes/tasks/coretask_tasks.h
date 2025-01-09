@@ -28,6 +28,8 @@ typedef struct callbacks_s
 	void	(*rendering)(void);//function that will draw the game
 	void	(*keys)(void);//function called at start to init each key function
 	void	(*irq)(void);//function called at each irq vblank
+	void	(*reg_sprites)(void);//function to initialise all sprites
+	void	(*initial_call)(void);//function called before game start rendering
 }	t_callback;
 
 void	run_task_irq(void);

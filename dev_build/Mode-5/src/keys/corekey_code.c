@@ -12,7 +12,7 @@
 
 #include "../../includes/coregba.h"
 
-void	set_keycode_status(u16 code, u8 active)
+void	set_keycode_status(u16 code, bool active)
 {
 	s8		i = get_key_num(code);
 	t_key	*key = get_key(i);
@@ -22,18 +22,18 @@ void	set_keycode_status(u16 code, u8 active)
 		if (!key->ignore || (key->ignore && !active))
 			key->is_pressed = active;
 		if (!active)
-			key->ignore = 0;
+			key->ignore = false;
 	}
 }
 
-u8	keycode_pressed(u16 code)
+bool	keycode_pressed(u16 code)
 {
 	s8		i = get_key_num(code);
 	t_key	*key = get_key(i);
 
 	if (key)
 		return (key->is_pressed);
-	return (0);
+	return (false);
 }
 
 void	add_keycode(u8 id, u16 code, void (*(func))(void))

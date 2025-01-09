@@ -17,8 +17,10 @@
 /// @param src source
 /// @param n size
 /// @return dest ptr
-void	*xmemcpy(void *dest, const void *src, size_t n)
+void	*xmemcpy(void *dest, const void *src, u32 n)
 {
+	u32	i = 0;
+
 	if (!dest && !src)
 		return (NULL);
 	CpuCopy(src, dest, n);
@@ -28,10 +30,10 @@ void	*xmemcpy(void *dest, const void *src, size_t n)
 /// @brief memset boosted with SMO methode
 /// @param s source
 /// @param c value that will be converted
-///in unsigned char
+///in u8
 /// @param n size
 /// @return s ptr
-void	*xmemset(void *s, u16 c, size_t n)
+void	*xmemset(void *s, u16 c, u32 n)
 {
     CpuFill(s, c, n);
 	return (s);
@@ -43,17 +45,17 @@ void	*xmemset(void *s, u16 c, size_t n)
 /// @param nmemb sizeof(value type)
 /// @param ts size to alloc
 /// @return 0 or 1
-int	xalloc(void **var, size_t nmemb, size_t ts)
+bool	xalloc(void **var, u32 nmemb, u32 ts)
 {
 	if (nmemb == 0 || ts == 0)
-		return (0);
+		return (false);
 	if (((ts * nmemb) / nmemb) != ts)
-		return (0);
+		return (false);
 	*var = mx_malloc(nmemb * ts);
 	if (!(*var))
-		return (0);
+		return (false);
 	xmemset(*var, 0, nmemb * ts);
-	return (1);
+	return (true);
 }
 
 /// @brief check if the ptr give in param is not null

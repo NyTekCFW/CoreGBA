@@ -44,9 +44,17 @@ enum e_row_color
 # define STR_BUTTON_R			"\x15"
 # define STR_BUTTON_START		"\x16"
 # define STR_BUTTON_SELECT		"\x17"
+# define STR_ICON_UNCHECKED		"\x18"
+# define STR_ICON_CHECKED		"\x19"
+# define STR_ICON_LOCKED_TROPHY	"\x1A"
+# define STR_ICON_BRONZE_TROPHY	"\x1B"
+# define STR_ICON_SILVER_TROPHY	"\x1C"
+# define STR_ICON_GOLD_TROPHY	"\x1D"
+
 
 # include "coregfx_glyphs.h"
-# include "coregfx_img.h"
+# include "coregfx_sprites.h"
+# include "coregfx_sprites_pal.h"
 # include "coregfx_basics.h"
 # include "coregfx_color.h"
 # include "coregfx_text.h"
