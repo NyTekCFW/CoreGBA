@@ -1,8 +1,9 @@
 # CoreGBA
 
-The original name of this project is 'mxgba' renamed to CoreGBA later,
-its an set of tools optimized to simplify and accelerate GBA game development, while providing great freedom to users.
+CoreGBA is a low-level Game Boy Advance development framework/library that acts like a game engine.
 
-This project is still in development, bugs may arise and will be corrected over time.
+It provides core systems such as rendering methods, memory management, savedata managements, etc...
 
-Not available for the  moment.
+Built around Mode 5, CoreGBA aims to simplify GBA development while giving developers direct control over systems.
+
+The project is currently in active development and is not yet stable. Bugs, missing features, and breaking changes are expected and will be fixed over time.
